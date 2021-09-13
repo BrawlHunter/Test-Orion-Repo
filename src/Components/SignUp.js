@@ -1,26 +1,31 @@
 import React from "react";
 
+function formatDate(date) {
+  return date.toISOString().slice(0, 10);
+}
+
 export default function SignUp(props) {
-  console.log("what is this " + props.name);
   return (
-    <div classNameName="container">
+    <div className="container">
       <form>
         <div className="row">
-          <div className="col ">
+          <div className="col">
             <label for="firstName">First Name</label>
             <input
               type="text"
               className="form-control"
               id="firstName"
+              value={props.data.firstName}
               required
             />
           </div>
-          <div className="col ">
+          <div className="col">
             <label for="lastName">Last Name</label>
             <input
               type="text"
               className="form-control"
               id="lastName"
+              value={props.data.lastName}
               required
             />
           </div>
@@ -31,15 +36,22 @@ export default function SignUp(props) {
             <input
               required
               type="text"
+              value={props.data.phone}
               className="form-control"
               id="phoneNumber"
               pattern="[1-9][0-9]{9}"
-              maxLength="10"
+              maxLength="15"
             />
           </div>
           <div className="col">
             <label for="dob">Date of Birth</label>
-            <input type="date" className="form-control" id="dob" required />
+            <input
+              type="date"
+              value={formatDate(props.data.dob)}
+              className="form-control"
+              id="dob"
+              required
+            />
           </div>
         </div>
         <div className="form-group">
@@ -47,16 +59,18 @@ export default function SignUp(props) {
           <input
             required
             type="email"
+            value={props.data.email}
             className="form-control"
             id="email"
             placeholder=""
           />
         </div>
-        <div class="form-group">
+        <div className="form-group">
           <label for="address">Address</label>
           <textarea
             required
             id="address"
+            value={props.data.address}
             class="form-control"
             aria-label="With textarea"
           ></textarea>

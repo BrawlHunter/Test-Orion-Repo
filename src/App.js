@@ -3,17 +3,9 @@ import Footer from "./Components/Footer.js";
 import SignUp from "./Components/SignUp.js";
 import Plans from "./Components/Plans";
 
-let sampleData = {
-  firstName: "shreyas",
-  lastName: "girjapure",
-  dob: new Date(),
-  address: "hello world",
-  phone: "1231231",
-  email: "shreyas@gmail.com",
-};
 let plans = [
   {
-    description: "first plan",
+    description: ["first plan the next line data "],
     imageUrl: "https://source.unsplash.com/1000x600/?workout",
   },
   {
@@ -30,7 +22,7 @@ function App() {
     <div className="App container">
       <Header />
       <h1>Hello Bitches 😎</h1>
-      <SignUp data={sampleData} />
+      <SignUp />
       <Plans plans={plans} />
       <Footer />
     </div>

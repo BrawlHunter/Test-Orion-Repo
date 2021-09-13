@@ -15,7 +15,6 @@ export default function SignUp(props) {
               type="text"
               className="form-control"
               id="firstName"
-              value={props.data.firstName}
               required
             />
           </div>
@@ -25,7 +24,6 @@ export default function SignUp(props) {
               type="text"
               className="form-control"
               id="lastName"
-              value={props.data.lastName}
               required
             />
           </div>
@@ -36,7 +34,6 @@ export default function SignUp(props) {
             <input
               required
               type="text"
-              value={props.data.phone}
               className="form-control"
               id="phoneNumber"
               pattern="[1-9][0-9]{9}"
@@ -45,13 +42,7 @@ export default function SignUp(props) {
           </div>
           <div className="col">
             <label for="dob">Date of Birth</label>
-            <input
-              type="date"
-              value={formatDate(props.data.dob)}
-              className="form-control"
-              id="dob"
-              required
-            />
+            <input type="date" className="form-control" id="dob" required />
           </div>
         </div>
         <div className="form-group">
@@ -59,7 +50,6 @@ export default function SignUp(props) {
           <input
             required
             type="email"
-            value={props.data.email}
             className="form-control"
             id="email"
             placeholder=""
@@ -70,7 +60,6 @@ export default function SignUp(props) {
           <textarea
             required
             id="address"
-            value={props.data.address}
             class="form-control"
             aria-label="With textarea"
           ></textarea>
